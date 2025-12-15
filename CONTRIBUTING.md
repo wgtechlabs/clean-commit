@@ -105,8 +105,11 @@ Documentation improvements are always welcome!
 ### How to Contribute Documentation
 
 1. **Fork the Repository**
+   - Fork the repository on GitHub: https://github.com/wgtechlabs/clean-commit
+   - Clone your fork:
    ```bash
-   git fork https://github.com/wgtechlabs/clean-commit
+   git clone https://github.com/YOUR-USERNAME/clean-commit
+   cd clean-commit
    ```
 
 2. **Create a Branch**
