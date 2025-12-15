@@ -129,6 +129,20 @@ Documentation improvements are always welcome!
    📖 docs: fix typo in specification
    ```
 
+   **Automate with GitHub Copilot (Optional):**
+   
+   Configure VS Code to auto-generate Clean Commit messages:
+   
+   ```json
+   {
+     "github.copilot.chat.commitMessageGeneration.instructions": [
+       {
+         "text": "Use Clean Commit convention: <emoji> <type>: <description> or <emoji> <type>(<scope>): <description>. Choose type: 📦 new=user-facing features/functionality, 🔧 update=modify existing code/logic, 🗑️ remove=delete code/features, 🔒 security=fix vulnerabilities, ⚙️ setup=configs/CI/tooling/.github files, ☕ chore=maintenance/deps/LICENSE, 🧪 test=test files, 📖 docs=README/guides/comments, 🚀 release=version tags. Format: lowercase type, present tense (add not added), no period, max 72 chars. Examples: ⚙️ setup: add GitHub funding configuration | 📦 new: user authentication | 🔧 update(api): improve error handling | ☕ chore(deps): bump react version"
+       }
+     ]
+   }
+   ```
+
 5. **Submit a Pull Request**
    - Describe what you changed and why
    - Link to any related issues

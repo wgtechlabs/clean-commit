@@ -154,6 +154,41 @@ Scopes help specify **where** the change happened. They're completely optional b
 
 ---
 
+## GitHub Copilot Integration
+
+Automate Clean Commit in VS Code by configuring GitHub Copilot to generate commit messages following this convention.
+
+### Setup Instructions
+
+1. Open VS Code Settings (JSON): `Ctrl/Cmd + Shift + P` → "Preferences: Open User Settings (JSON)"
+2. Add this configuration:
+
+```json
+{
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Use Clean Commit convention: <emoji> <type>: <description> or <emoji> <type>(<scope>): <description>. Choose type: 📦 new=user-facing features/functionality, 🔧 update=modify existing code/logic, 🗑️ remove=delete code/features, 🔒 security=fix vulnerabilities, ⚙️ setup=configs/CI/tooling/.github files, ☕ chore=maintenance/deps/LICENSE, 🧪 test=test files, 📖 docs=README/guides/comments, 🚀 release=version tags. Format: lowercase type, present tense (add not added), no period, max 72 chars. Examples: ⚙️ setup: add GitHub funding configuration | 📦 new: user authentication | 🔧 update(api): improve error handling | ☕ chore(deps): bump react version"
+    }
+  ]
+}
+```
+
+3. Save and reload VS Code
+4. GitHub Copilot will now suggest commit messages using Clean Commit format
+
+**Alternative: Project-Specific Setup**
+
+Create `.github/copilot-instructions.md` in your repository:
+
+```markdown
+# Commit Message Convention
+
+Use Clean Commit convention for all commits.
+See: https://github.com/wgtechlabs/clean-commit
+```
+
+---
+
 ## Learn More
 
 - 📋 [**SPECIFICATION.md**](SPECIFICATION.md) - Full technical specification with detailed guidelines
