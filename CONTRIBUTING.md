@@ -108,7 +108,7 @@ Documentation improvements are always welcome!
    - Fork the repository on GitHub: https://github.com/wgtechlabs/clean-commit
    - Clone your fork:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/clean-commit
+   git clone https://github.com/YOUR-USERNAME/clean-commit.git
    cd clean-commit
    ```
 
