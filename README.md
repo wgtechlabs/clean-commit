@@ -382,9 +382,103 @@ This section shows real-world commit examples organized by project type to help 
 📖 docs(install): platform-specific installation guides
 ```
 
-### More Examples
+### Bot (Discord/Telegram)
 
-For additional examples including Bot (Discord/Telegram) and GitHub Action use cases, see the [SPECIFICATION.md](SPECIFICATION.md) document.
+**Context:** Chat bot with commands and event handlers
+
+#### Bot Commands
+```
+📦 new(cmd): welcome command for new members
+📦 new: moderation commands for admins
+📦 new(cmd): poll creation with reaction voting
+🔧 update: improve help command with categories
+🔧 update(cmd): enhance music player with queue system
+🗑️ remove: deprecated legacy command syntax
+```
+
+#### Features & Integrations
+```
+📦 new: integration with spotify api
+📦 new(feature): automated role assignment
+📦 new: custom embed messages with rich formatting
+🔧 update: improve message parsing and validation
+🔧 update(db): migrate to postgresql for better scaling
+```
+
+#### Event Handlers
+```
+📦 new(event): handle member join events
+📦 new: reaction role system
+🔧 update(event): improve message deletion logging
+🔧 update: add rate limiting for command usage
+🔒 security: validate user permissions before commands
+```
+
+#### Configuration & Deployment
+```
+⚙️ setup: add environment variable configuration
+⚙️ setup(deploy): containerize bot with docker
+📦 new(config): per-server configuration system
+☕ chore: update discord.js to latest version
+```
+
+#### Testing & Documentation
+```
+🧪 test: add unit tests for command handlers
+🧪 test: mock discord api for integration tests
+📖 docs: create bot setup guide for server admins
+📖 docs(commands): document all available commands
+🚀 release: deploy version 2.0.0 to production
+```
+
+### GitHub Action
+
+**Context:** Custom GitHub Action for CI/CD workflows
+
+#### Action Development
+```
+📦 new: initial action for code quality checks
+📦 new(input): add customizable threshold options
+📦 new: support for multiple programming languages
+🔧 update: improve performance of file scanning
+🔧 update(output): add detailed report generation
+🗑️ remove: legacy node 12 support
+```
+
+#### Integration & Compatibility
+```
+📦 new: add support for pull request comments
+📦 new(integration): slack notification output
+🔧 update: support both github token and app auth
+🔧 update: improve error handling with actionable messages
+⚙️ setup(ci): add automated testing workflow
+```
+
+#### Documentation & Examples
+```
+📖 docs: create comprehensive action usage guide
+📖 docs(examples): add workflow examples for common scenarios
+📖 docs: add troubleshooting section
+📖 docs(inputs): document all input parameters
+📖 docs(outputs): document all output values
+```
+
+#### Distribution & Versioning
+```
+⚙️ setup: configure automated release process
+⚙️ setup(build): optimize action bundle size
+🚀 release: version 1.0.0 stable release
+🚀 release: tag v2 for breaking changes
+☕ chore(deps): update action dependencies
+```
+
+#### Testing & Quality
+```
+🧪 test: add end-to-end tests with real workflows
+🧪 test(unit): test action logic with various inputs
+🔒 security: validate and sanitize user inputs
+☕ chore: update action to use node 20
+```
 
 ---
 
