@@ -2,7 +2,9 @@
 
 Version: 1.0.0
 
-This document provides the complete technical specification for the Clean Commit convention.
+This document provides the complete technical specification for the Clean Commit workflow.
+
+**About this workflow:** Clean Commit is a documented personal workflow I've refined over years of practice across multiple projects. It represents my standardized approach to writing commit messages. As others adopt and adapt it, it may evolve into a broader convention over time.
 
 ---
 
@@ -12,7 +14,7 @@ This document provides the complete technical specification for the Clean Commit
 - [The 9 Types](#the-9-types)
 - [Decision Tree](#decision-tree)
 - [Edge Cases & FAQs](#edge-cases--faqs)
-- [Comparison with Other Conventions](#comparison-with-other-conventions)
+- [Comparison with Other Workflows](#comparison-with-other-workflows)
 
 ---
 
@@ -427,7 +429,7 @@ Examples:
 
 ### Q: Can I use custom emojis or types?
 
-**A:** No. The convention defines exactly 9 types with specific emojis. Consistency is key to making commit history scannable.
+**A:** No. This workflow defines exactly 9 types with specific emojis. Consistency is key to making commit history scannable.
 
 ### Q: What about breaking changes?
 
@@ -449,7 +451,7 @@ BREAKING CHANGE: Authentication endpoint now returns user object instead of toke
 
 ---
 
-## Comparison with Other Conventions
+## Comparison with Other Workflows
 
 ### vs. Conventional Commits
 

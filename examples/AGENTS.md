@@ -1,6 +1,6 @@
-# Clean Commit Convention
+# Clean Commit Workflow
 
-When generating commit messages for this repository, follow the **Clean Commit** convention.
+When generating commit messages for this repository, follow the **Clean Commit** workflow.
 
 Reference: https://github.com/wgtechlabs/clean-commit
 

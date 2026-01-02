@@ -7,13 +7,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/wgtechlabs/clean-commit)
 
-A minimalist git commit convention designed to be simple, memorable, and universal. Clean Commit helps you write clear, consistent commit messages that make your project history easy to understand.
+A minimalist git commit workflow designed to be simple, memorable, and universal. Clean Commit helps you write clear, consistent commit messages that make your project history easy to understand.
+
+**Note:** This is a documented personal workflow I've refined over years of practice. While I use the term "Clean Commit workflow" to describe this standardized approach, it may evolve into a broader convention as others adopt and adapt it.
 
 ---
 
 ## Why Clean Commit?
 
-Existing commit conventions are **too complex**. They require memorizing lengthy type names, complex scoping rules, and rigid formats that slow you down.
+Existing commit workflows are **too complex**. They require memorizing lengthy type names, complex scoping rules, and rigid formats that slow you down.
 
 Clean Commit is different:
 - ✨ **Simple**: Only 9 types to remember
@@ -156,7 +158,7 @@ Scopes help specify **where** the change happened. They're completely optional b
 
 ## GitHub Copilot Integration
 
-Automate Clean Commit in VS Code by configuring GitHub Copilot to generate commit messages following this convention.
+Automate Clean Commit in VS Code by configuring GitHub Copilot to generate commit messages following this workflow.
 
 ### Setup Instructions
 
@@ -167,7 +169,7 @@ Automate Clean Commit in VS Code by configuring GitHub Copilot to generate commi
 {
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "text": "Use Clean Commit convention: <emoji> <type>: <description> or <emoji> <type>(<scope>): <description>. Choose type: 📦 new=user-facing features/functionality, 🔧 update=modify existing code/logic, 🗑️ remove=delete code/features, 🔒 security=fix vulnerabilities, ⚙️ setup=configs/CI/tooling/.github files, ☕ chore=maintenance/deps/LICENSE, 🧪 test=test files, 📖 docs=README/guides/comments, 🚀 release=version tags. Format: lowercase type, present tense (add not added), no period, max 72 chars. Examples: ⚙️ setup: add GitHub funding configuration | 📦 new: user authentication | 🔧 update(api): improve error handling | ☕ chore(deps): bump react version"
+      "text": "Use Clean Commit workflow: <emoji> <type>: <description> or <emoji> <type>(<scope>): <description>. Choose type: 📦 new=user-facing features/functionality, 🔧 update=modify existing code/logic, 🗑️ remove=delete code/features, 🔒 security=fix vulnerabilities, ⚙️ setup=configs/CI/tooling/.github files, ☕ chore=maintenance/deps/LICENSE, 🧪 test=test files, 📖 docs=README/guides/comments, 🚀 release=version tags. Format: lowercase type, present tense (add not added), no period, max 72 chars. Examples: ⚙️ setup: add GitHub funding configuration | 📦 new: user authentication | 🔧 update(api): improve error handling | ☕ chore(deps): bump react version"
     }
   ]
 }
@@ -181,9 +183,9 @@ Automate Clean Commit in VS Code by configuring GitHub Copilot to generate commi
 Create `.github/copilot-instructions.md` in your repository:
 
 ```markdown
-# Commit Message Convention
+# Commit Message Workflow
 
-Use Clean Commit convention for all commits.
+Use Clean Commit workflow for all commits.
 See: https://github.com/wgtechlabs/clean-commit
 ```
 
