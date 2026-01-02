@@ -2,9 +2,9 @@
 applyTo: "**"
 ---
 
-# Clean Commit Convention
+# Clean Commit Workflow
 
-This repository follows the **Clean Commit** convention for all commit messages.
+This repository follows the **Clean Commit** workflow for all commit messages.
 
 Reference: https://github.com/wgtechlabs/clean-commit
 

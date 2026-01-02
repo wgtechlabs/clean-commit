@@ -7,7 +7,7 @@ Thank you for your interest in contributing to Clean Commit! We welcome contribu
 ## Table of Contents
 
 - [How to Contribute](#how-to-contribute)
-- [Proposing Changes to the Convention](#proposing-changes-to-the-convention)
+- [Proposing Changes to the Workflow](#proposing-changes-to-the-workflow)
 - [Improving Documentation](#improving-documentation)
 - [Discussion Guidelines](#discussion-guidelines)
 - [Code of Conduct](#code-of-conduct)
@@ -41,14 +41,14 @@ There are many ways to contribute to Clean Commit:
 
 ---
 
-## Proposing Changes to the Convention
+## Proposing Changes to the Workflow
 
-The Clean Commit convention is intentionally minimal and stable. Changes to the core specification require careful consideration.
+The Clean Commit workflow is intentionally minimal and stable. Changes to the core specification require careful consideration.
 
 ### Before Proposing a Change
 
 Ask yourself:
-- Does this change make the convention simpler or more complex?
+- Does this change make the workflow simpler or more complex?
 - Is this solving a real problem that many users face?
 - Can existing types handle this use case?
 - Does this maintain the "Clean Code deserves Clean Commit" philosophy?
@@ -122,7 +122,7 @@ Documentation improvements are always welcome!
    - Follow existing formatting conventions
    - Keep language simple and friendly
 
-4. **Use Clean Commit Convention**
+4. **Use Clean Commit Workflow**
    ```bash
    📖 docs: improve examples in quick reference
    📖 docs(readme): add missing installation step
@@ -137,7 +137,7 @@ Documentation improvements are always welcome!
    {
      "github.copilot.chat.commitMessageGeneration.instructions": [
        {
-         "text": "Use Clean Commit convention: <emoji> <type>: <description> or <emoji> <type>(<scope>): <description>. Choose type: 📦 new=user-facing features/functionality, 🔧 update=modify existing code/logic, 🗑️ remove=delete code/features, 🔒 security=fix vulnerabilities, ⚙️ setup=configs/CI/tooling/.github files, ☕ chore=maintenance/deps/LICENSE, 🧪 test=test files, 📖 docs=README/guides/comments, 🚀 release=version tags. Format: lowercase type, present tense (add not added), no period, max 72 chars. Examples: ⚙️ setup: add GitHub funding configuration | 📦 new: user authentication | 🔧 update(api): improve error handling | ☕ chore(deps): bump react version"
+         "text": "Use Clean Commit workflow: <emoji> <type>: <description> or <emoji> <type>(<scope>): <description>. Choose type: 📦 new=user-facing features/functionality, 🔧 update=modify existing code/logic, 🗑️ remove=delete code/features, 🔒 security=fix vulnerabilities, ⚙️ setup=configs/CI/tooling/.github files, ☕ chore=maintenance/deps/LICENSE, 🧪 test=test files, 📖 docs=README/guides/comments, 🚀 release=version tags. Format: lowercase type, present tense (add not added), no period, max 72 chars. Examples: ⚙️ setup: add GitHub funding configuration | 📦 new: user authentication | 🔧 update(api): improve error handling | ☕ chore(deps): bump react version"
        }
      ]
    }
@@ -175,7 +175,7 @@ When participating in discussions:
 
 ### Unhealthy Discussion Example
 
-> "This convention is useless without a 'fix' type. Anyone who thinks otherwise doesn't understand real development."
+> "This workflow is useless without a 'fix' type. Anyone who thinks otherwise doesn't understand real development."
 
 ---
 

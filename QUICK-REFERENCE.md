@@ -1,6 +1,6 @@
 # Clean Commit Quick Reference
 
-**One-page cheatsheet for Clean Commit convention**
+**One-page cheatsheet for Clean Commit workflow**
 
 ---
 
@@ -231,7 +231,7 @@ git config commit.template .gitmessage
    - Think: "What did this commit accomplish?"
 
 3. **Be consistent**
-   - Stick to the convention
+   - Stick to the workflow
    - Use the same scope names
 
 4. **When in doubt, check the decision tree**
