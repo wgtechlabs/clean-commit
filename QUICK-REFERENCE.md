@@ -8,7 +8,7 @@
 
 ```
 <emoji> <type>: <description>
-<emoji> <type>(<scope>): <description>  [with optional scope]
+<emoji> <type> (<scope>): <description>  [with optional scope]
 ```
 
 ---
@@ -50,56 +50,56 @@ Maintenance/cleanup?        → ☕ chore
 ### 📦 new
 ```
 📦 new: user authentication system
-📦 new(api): endpoint for user registration
+📦 new (api): endpoint for user registration
 📦 new: dark mode support
 ```
 
 ### 🔧 update
 ```
 🔧 update: improve database query performance
-🔧 update(ui): enhance button animations
+🔧 update (ui): enhance button animations
 🔧 update: refactor payment processing
 ```
 
 ### 🗑️ remove
 ```
 🗑️ remove: deprecated api endpoints
-🗑️ remove(deps): unused lodash dependency
+🗑️ remove (deps): unused lodash dependency
 🗑️ remove: obsolete migration scripts
 ```
 
 ### 🔒 security
 ```
 🔒 security: patch xss vulnerability
-🔒 security(auth): fix jwt validation
+🔒 security (auth): fix jwt validation
 🔒 security: update dependencies with cves
 ```
 
 ### ⚙️ setup
 ```
 ⚙️ setup: add eslint configuration
-⚙️ setup(ci): configure github actions
+⚙️ setup (ci): configure github actions
 ⚙️ setup: initialize docker environment
 ```
 
 ### ☕ chore
 ```
 ☕ chore: update npm dependencies
-☕ chore(deps): bump react to v18
+☕ chore (deps): bump react to v18
 ☕ chore: clean up unused imports
 ```
 
 ### 🧪 test
 ```
 🧪 test: add unit tests for auth service
-🧪 test(api): integration tests for users
+🧪 test (api): integration tests for users
 🧪 test: fix flaky date parsing test
 ```
 
 ### 📖 docs
 ```
 📖 docs: update installation guide
-📖 docs(api): add endpoint documentation
+📖 docs (api): add endpoint documentation
 📖 docs: fix typos in readme
 ```
 
@@ -145,7 +145,7 @@ Keep scopes:
 Create a `.gitmessage` file in your project:
 
 ```
-# <emoji> <type>(<scope>): <description>
+# <emoji> <type> (<scope>): <description>
 # 
 # Types:
 # 📦 new       - Adding code
@@ -164,7 +164,7 @@ Create a `.gitmessage` file in your project:
 # - No period at end
 # - Max 72 chars
 #
-# Example: 📦 new(auth): user login with email verification
+# Example: 📦 new (auth): user login with email verification
 ```
 
 ### Set up the template globally:
@@ -185,7 +185,7 @@ git config commit.template .gitmessage
 
 ### Dependency Updates
 ```
-☕ chore(deps): bump express from 4.17.1 to 4.18.2
+☕ chore (deps): bump express from 4.17.1 to 4.18.2
 ☕ chore: update all dev dependencies
 🔒 security: update lodash to fix vulnerability
 ```
@@ -193,28 +193,28 @@ git config commit.template .gitmessage
 ### Refactoring
 ```
 🔧 update: refactor user service to use async/await
-🔧 update(api): simplify error handling middleware
+🔧 update (api): simplify error handling middleware
 🔧 update: extract validation logic to utils
 ```
 
 ### Adding Features
 ```
 📦 new: real-time notifications with websockets
-📦 new(api): pagination support for all endpoints
+📦 new (api): pagination support for all endpoints
 📦 new: export data to csv functionality
 ```
 
 ### Bug Fixes
 ```
 🔧 update: fix date formatting in profile
-🔧 update(api): handle null values in response
+🔧 update (api): handle null values in response
 🔒 security: fix auth token validation bypass
 ```
 
 ### Testing
 ```
 🧪 test: add e2e tests for checkout flow
-🧪 test(unit): increase coverage for utils
+🧪 test (unit): increase coverage for utils
 🧪 test: mock external api in integration tests
 ```
 

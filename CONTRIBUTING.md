@@ -125,7 +125,7 @@ Documentation improvements are always welcome!
 4. **Use Clean Commit Workflow**
    ```bash
    📖 docs: improve examples in quick reference
-   📖 docs(readme): add missing installation step
+   📖 docs (readme): add missing installation step
    📖 docs: fix typo in specification
    ```
 
@@ -137,7 +137,7 @@ Documentation improvements are always welcome!
    {
      "github.copilot.chat.commitMessageGeneration.instructions": [
        {
-         "text": "Use Clean Commit workflow: <emoji> <type>: <description> or <emoji> <type>(<scope>): <description>. Choose type: 📦 new=user-facing features/functionality, 🔧 update=modify existing code/logic, 🗑️ remove=delete code/features, 🔒 security=fix vulnerabilities, ⚙️ setup=configs/CI/tooling/.github files, ☕ chore=maintenance/deps/LICENSE, 🧪 test=test files, 📖 docs=README/guides/comments, 🚀 release=version tags. Format: lowercase type, present tense (add not added), no period, max 72 chars. Examples: ⚙️ setup: add GitHub funding configuration | 📦 new: user authentication | 🔧 update(api): improve error handling | ☕ chore(deps): bump react version"
+         "text": "Use Clean Commit workflow: <emoji> <type>: <description> or <emoji> <type> (<scope>): <description>. Choose type: 📦 new=user-facing features/functionality, 🔧 update=modify existing code/logic, 🗑️ remove=delete code/features, 🔒 security=fix vulnerabilities, ⚙️ setup=configs/CI/tooling/.github files, ☕ chore=maintenance/deps/LICENSE, 🧪 test=test files, 📖 docs=README/guides/comments, 🚀 release=version tags. Format: lowercase type, present tense (add not added), no period, max 72 chars. Examples: ⚙️ setup: add GitHub funding configuration | 📦 new: user authentication | 🔧 update (api): improve error handling | ☕ chore (deps): bump react version"
        }
      ]
    }
