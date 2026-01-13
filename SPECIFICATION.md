@@ -29,7 +29,7 @@ This document provides the complete technical specification for the Clean Commit
 Or with optional scope:
 
 ```
-<emoji> <type>(<scope>): <description>
+<emoji> <type> (<scope>): <description>
 ```
 
 ### Mandatory Rules
@@ -49,6 +49,7 @@ Or with optional scope:
 
 1. **Scope**: 
    - Enclosed in parentheses
+   - Space before opening parenthesis
    - Placed between type and colon
    - Lowercase
    - Single word preferred
@@ -59,7 +60,7 @@ Or with optional scope:
 ✅ Good:
 ```
 📦 new: user authentication system
-🔧 update(api): improve error handling
+🔧 update (api): improve error handling
 🗑️ remove: deprecated payment gateway
 ```
 
@@ -70,6 +71,7 @@ new: user authentication  (missing emoji)
 📦 new: Authentication.   (capitalized description, has period)
 📦 new:authentication     (missing space after colon)
 📦 new: Added auth        (past tense)
+📦 new(api): feature      (missing space before scope)
 ```
 
 ---
@@ -88,11 +90,11 @@ new: user authentication  (missing emoji)
 **Examples:**
 ```
 📦 new: user registration with email verification
-📦 new(auth): oauth2 google authentication
+📦 new (auth): oauth2 google authentication
 📦 new: real-time chat feature with websockets
-📦 new(api): pagination support for all list endpoints
+📦 new (api): pagination support for all list endpoints
 📦 new: dark mode toggle in settings
-📦 new(database): migration for user preferences table
+📦 new (database): migration for user preferences table
 ```
 
 **Don't use for:**
@@ -115,11 +117,11 @@ new: user authentication  (missing emoji)
 **Examples:**
 ```
 🔧 update: improve login form validation
-🔧 update(api): optimize database query performance
+🔧 update (api): optimize database query performance
 🔧 update: refactor user service to use async/await
-🔧 update(ui): enhance mobile responsive design
+🔧 update (ui): enhance mobile responsive design
 🔧 update: replace moment.js with date-fns
-🔧 update(search): improve fuzzy search algorithm
+🔧 update (search): improve fuzzy search algorithm
 ```
 
 **Don't use for:**
@@ -141,11 +143,11 @@ new: user authentication  (missing emoji)
 **Examples:**
 ```
 🗑️ remove: deprecated legacy api endpoints
-🗑️ remove(deps): unused axios dependency
+🗑️ remove (deps): unused axios dependency
 🗑️ remove: obsolete user migration scripts
-🗑️ remove(ui): old unused modal components
+🗑️ remove (ui): old unused modal components
 🗑️ remove: commented-out debug code
-🗑️ remove(feature): beta analytics dashboard
+🗑️ remove (feature): beta analytics dashboard
 ```
 
 **Don't use for:**
@@ -167,11 +169,11 @@ new: user authentication  (missing emoji)
 **Examples:**
 ```
 🔒 security: patch sql injection vulnerability in search
-🔒 security(auth): fix jwt token validation bypass
+🔒 security (auth): fix jwt token validation bypass
 🔒 security: sanitize user input to prevent xss attacks
-🔒 security(api): add rate limiting to prevent ddos
+🔒 security (api): add rate limiting to prevent ddos
 🔒 security: update lodash to fix prototype pollution
-🔒 security(session): implement secure cookie flags
+🔒 security (session): implement secure cookie flags
 ```
 
 **Don't use for:**
@@ -195,11 +197,11 @@ new: user authentication  (missing emoji)
 **Examples:**
 ```
 ⚙️ setup: add prettier configuration
-⚙️ setup(ci): configure github actions for testing
+⚙️ setup (ci): configure github actions for testing
 ⚙️ setup: initialize typescript project
-⚙️ setup(docker): add docker compose for local development
+⚙️ setup (docker): add docker compose for local development
 ⚙️ setup: configure eslint with airbnb style guide
-⚙️ setup(build): optimize webpack production config
+⚙️ setup (build): optimize webpack production config
 ```
 
 **Don't use for:**
@@ -223,10 +225,10 @@ new: user authentication  (missing emoji)
 **Examples:**
 ```
 ☕ chore: update npm dependencies to latest versions
-☕ chore(deps): bump react from 17.0.2 to 18.2.0
+☕ chore (deps): bump react from 17.0.2 to 18.2.0
 ☕ chore: reorganize component folder structure
 ☕ chore: format codebase with prettier
-☕ chore(package): remove unused npm scripts
+☕ chore (package): remove unused npm scripts
 ☕ chore: clean up console.log statements
 ```
 
@@ -251,11 +253,11 @@ new: user authentication  (missing emoji)
 **Examples:**
 ```
 🧪 test: add unit tests for authentication service
-🧪 test(api): integration tests for user endpoints
+🧪 test (api): integration tests for user endpoints
 🧪 test: fix flaky date parsing test
-🧪 test(e2e): add cypress tests for login flow
+🧪 test (e2e): add cypress tests for login flow
 🧪 test: increase coverage for payment module
-🧪 test(utils): add test helpers for mocking api calls
+🧪 test (utils): add test helpers for mocking api calls
 ```
 
 **Don't use for:**
@@ -278,11 +280,11 @@ new: user authentication  (missing emoji)
 **Examples:**
 ```
 📖 docs: update installation instructions
-📖 docs(api): add swagger documentation for auth endpoints
+📖 docs (api): add swagger documentation for auth endpoints
 📖 docs: fix typos in contributing guide
-📖 docs(readme): add usage examples
+📖 docs (readme): add usage examples
 📖 docs: create architecture decision record for state management
-📖 docs(code): add jsdoc comments to utility functions
+📖 docs (code): add jsdoc comments to utility functions
 ```
 
 **Don't use for:**
@@ -306,7 +308,7 @@ new: user authentication  (missing emoji)
 🚀 release: version 1.0.0
 🚀 release: prepare for version 2.1.0 release
 🚀 release: hotfix version 1.0.1
-🚀 release(npm): publish package version 3.2.0
+🚀 release (npm): publish package version 3.2.0
 🚀 release: release candidate 2.0.0-rc.1
 🚀 release: bump version to 1.5.0 for production
 ```
@@ -436,7 +438,7 @@ Examples:
 **A:** Use the appropriate type for what you're doing. You can add `BREAKING CHANGE:` in the commit body (not the subject line) if needed.
 
 ```
-🔧 update(api): change authentication endpoint response format
+🔧 update (api): change authentication endpoint response format
 
 BREAKING CHANGE: Authentication endpoint now returns user object instead of token string.
 ```

@@ -12,7 +12,7 @@ Reference: https://github.com/wgtechlabs/clean-commit
 
 ```text
 <emoji> <type>: <description>
-<emoji> <type>(<scope>): <description>
+<emoji> <type> (<scope>): <description>
 ```
 
 ## The 9 Types
@@ -39,8 +39,8 @@ Reference: https://github.com/wgtechlabs/clean-commit
 ## Examples
 
 - `📦 new: user authentication system`
-- `🔧 update(api): improve error handling`
-- `🗑️ remove(deps): unused lodash dependency`
+- `🔧 update (api): improve error handling`
+- `🗑️ remove (deps): unused lodash dependency`
 - `🔒 security: patch XSS vulnerability`
 - `⚙️ setup: add eslint configuration`
 - `☕ chore: update npm dependencies`
