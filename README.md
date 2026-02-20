@@ -5,7 +5,7 @@
 <!-- Banner placeholder - Add project banner here -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/wgtechlabs/clean-commit)
+[![Version](https://img.shields.io/badge/version-1.1.0-green.svg)](https://github.com/wgtechlabs/clean-commit)
 
 A minimalist git commit workflow designed to be simple, memorable, and universal. Clean Commit helps you write clear, consistent commit messages that make your project history easy to understand.
 
@@ -65,8 +65,20 @@ Clean Commit is different:
 🔧 update (api): improve error handling
 ```
 
+### With Breaking Change Marker
+
+```
+<emoji> <type>!: <description>
+```
+
+**Example:**
+```
+📦 new!: completely redesign authentication system
+```
+
 ### Rules
 - Use lowercase for type
+- Use `!` immediately after type (no space) to signal a breaking change
 - Use present tense ("add" not "added")
 - No period at the end
 - Keep description under 72 characters
@@ -169,7 +181,7 @@ Automate Clean Commit in VS Code by configuring GitHub Copilot to generate commi
 {
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "text": "Use Clean Commit workflow: <emoji> <type>: <description> or <emoji> <type> (<scope>): <description>. Choose type: 📦 new=user-facing features/functionality, 🔧 update=modify existing code/logic, 🗑️ remove=delete code/features, 🔒 security=fix vulnerabilities, ⚙️ setup=configs/CI/tooling/.github files, ☕ chore=maintenance/deps/LICENSE, 🧪 test=test files, 📖 docs=README/guides/comments, 🚀 release=version tags. Format: lowercase type, present tense (add not added), no period, max 72 chars. Examples: ⚙️ setup: add GitHub funding configuration | 📦 new: user authentication | 🔧 update (api): improve error handling | ☕ chore (deps): bump react version"
+      "text": "Use Clean Commit workflow: <emoji> <type>: <description> or <emoji> <type> (<scope>): <description>. Add ! after type for breaking changes (only for new, update, remove, security) e.g. <emoji> <type>!: <description>. Choose type: 📦 new=user-facing features/functionality, 🔧 update=modify existing code/logic, 🗑️ remove=delete code/features, 🔒 security=fix vulnerabilities, ⚙️ setup=configs/CI/tooling/.github files, ☕ chore=maintenance/deps/LICENSE, 🧪 test=test files, 📖 docs=README/guides/comments, 🚀 release=version tags. Format: lowercase type, present tense (add not added), no period, max 72 chars. Examples: ⚙️ setup: add GitHub funding configuration | 📦 new: user authentication | 🔧 update (api): improve error handling | ☕ chore (deps): bump react version | 📦 new!: redesign authentication system"
     }
   ]
 }

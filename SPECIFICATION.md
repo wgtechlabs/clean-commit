@@ -1,6 +1,6 @@
 # Clean Commit Specification
 
-Version: 1.0.0
+Version: 1.1.0
 
 This document provides the complete technical specification for the Clean Commit workflow.
 
@@ -32,6 +32,18 @@ Or with optional scope:
 <emoji> <type> (<scope>): <description>
 ```
 
+Or with breaking change marker:
+
+```
+<emoji> <type>!: <description>
+```
+
+Or with scope and breaking change marker:
+
+```
+<emoji> <type>! (<scope>): <description>
+```
+
 ### Mandatory Rules
 
 1. **Emoji**: Must be the exact emoji specified for each type
@@ -55,6 +67,14 @@ Or with optional scope:
    - Single word preferred
    - Hyphenated if needed (e.g., `user-profile`)
 
+2. **Breaking Change Marker (`!`)**:
+   - A single `!` placed immediately after the type (before scope or colon)
+   - Only valid for `new`, `update`, `remove`, and `security` types
+   - Signals a breaking change in the subject line
+   - Can be combined with scope: `<type>! (<scope>):`
+   - Should also include `BREAKING CHANGE:` in the commit body for details
+   - Does not change which type to use — use the type that best describes the change
+
 ### Examples of Correct Format
 
 ✅ Good:
@@ -62,6 +82,8 @@ Or with optional scope:
 📦 new: user authentication system
 🔧 update (api): improve error handling
 🗑️ remove: deprecated payment gateway
+📦 new!: completely redesign authentication system
+🔧 update! (api): change response format for all endpoints
 ```
 
 ❌ Bad:
@@ -72,6 +94,8 @@ new: user authentication  (missing emoji)
 📦 new:authentication     (missing space after colon)
 📦 new: Added auth        (past tense)
 📦 new(api): feature      (missing space before scope)
+📦 new !(api): feature    (space before !, must be immediately after type)
+⚙️ setup!: add ci pipeline (! not allowed on setup, chore, test, docs, release)
 ```
 
 ---
@@ -435,13 +459,23 @@ Examples:
 
 ### Q: What about breaking changes?
 
-**A:** Use the appropriate type for what you're doing. You can add `BREAKING CHANGE:` in the commit body (not the subject line) if needed.
+**A:** Use `!` after the type in the subject line to signal a breaking change. You can also add `BREAKING CHANGE:` in the commit body for additional detail. The `!` marker is only valid for the `new`, `update`, `remove`, and `security` types — these are the types that can introduce breaking changes to functionality, APIs, or behavior.
 
+**Subject-line marker only:**
 ```
-🔧 update (api): change authentication endpoint response format
+📦 new!: completely redesign authentication system
+🔧 update! (api): change response format for all endpoints
+🗑️ remove!: remove deprecated v1 api endpoints
+```
+
+**With body detail:**
+```
+🔧 update! (api): change authentication endpoint response format
 
 BREAKING CHANGE: Authentication endpoint now returns user object instead of token string.
 ```
+
+Both approaches are valid and can be combined. The `!` marker makes breaking changes immediately visible when scanning history, while the `BREAKING CHANGE:` body note provides detail. The `BREAKING CHANGE:` body note alone (without `!`) remains supported for backwards compatibility.
 
 ### Q: Should I use scopes for small projects?
 
@@ -468,6 +502,7 @@ BREAKING CHANGE: Authentication endpoint now returns user object instead of toke
 - Visual emoji makes scanning easier
 - Simpler, more intuitive type names
 - Combines related types (e.g., `build` + `ci` = `setup`)
+- Supports `!` breaking change marker for subject-line visibility
 
 ### vs. Gitmoji
 
