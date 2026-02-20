@@ -9,6 +9,8 @@
 ```
 <emoji> <type>: <description>
 <emoji> <type> (<scope>): <description>  [with optional scope]
+<emoji> <type>!: <description>           [with breaking change marker]
+<emoji> <type>! (<scope>): <description> [with scope and breaking change marker]
 ```
 
 ---
@@ -116,11 +118,33 @@ Maintenance/cleanup?        → ☕ chore
 
 - ✅ Emoji matches the type
 - ✅ Type is lowercase
+- ✅ `!` immediately after type (no space) if breaking change
 - ✅ Space after colon
 - ✅ Present tense description
 - ✅ Lowercase first letter of description
 - ✅ No period at end
 - ✅ Under 72 characters total
+
+---
+
+## Breaking Changes
+
+Use `!` immediately after the type to signal a breaking change in the subject line:
+
+```
+📦 new!: completely redesign authentication system
+🔧 update!: drop support for node 14
+🗑️ remove!: remove deprecated v1 api endpoints
+🔧 update! (api): change response format for all endpoints
+```
+
+Optionally add `BREAKING CHANGE:` in the commit body for more detail:
+
+```
+🔧 update! (api): change authentication endpoint response format
+
+BREAKING CHANGE: Authentication endpoint now returns user object instead of token string.
+```
 
 ---
 
