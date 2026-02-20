@@ -1,6 +1,6 @@
 # Clean Commit Specification
 
-Version: 1.0.0
+Version: 1.1.0
 
 This document provides the complete technical specification for the Clean Commit workflow.
 
@@ -69,6 +69,7 @@ Or with scope and breaking change marker:
 
 2. **Breaking Change Marker (`!`)**:
    - A single `!` placed immediately after the type (before scope or colon)
+   - Only valid for `new`, `update`, `remove`, and `security` types
    - Signals a breaking change in the subject line
    - Can be combined with scope: `<type>! (<scope>):`
    - Should also include `BREAKING CHANGE:` in the commit body for details
@@ -94,6 +95,7 @@ new: user authentication  (missing emoji)
 📦 new: Added auth        (past tense)
 📦 new(api): feature      (missing space before scope)
 📦 new !(api): feature    (space before !, must be immediately after type)
+⚙️ setup!: add ci pipeline (! not allowed on setup, chore, test, docs, release)
 ```
 
 ---
@@ -457,7 +459,7 @@ Examples:
 
 ### Q: What about breaking changes?
 
-**A:** Use `!` after the type in the subject line to signal a breaking change. You can also add `BREAKING CHANGE:` in the commit body for additional detail.
+**A:** Use `!` after the type in the subject line to signal a breaking change. You can also add `BREAKING CHANGE:` in the commit body for additional detail. The `!` marker is only valid for the `new`, `update`, `remove`, and `security` types — these are the types that can introduce breaking changes to functionality, APIs, or behavior.
 
 **Subject-line marker only:**
 ```

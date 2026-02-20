@@ -118,7 +118,7 @@ Maintenance/cleanup?        → ☕ chore
 
 - ✅ Emoji matches the type
 - ✅ Type is lowercase
-- ✅ `!` immediately after type (no space) if breaking change
+- ✅ `!` immediately after type (no space) if breaking change — only for `new`, `update`, `remove`, `security`
 - ✅ Space after colon
 - ✅ Present tense description
 - ✅ Lowercase first letter of description
@@ -129,12 +129,13 @@ Maintenance/cleanup?        → ☕ chore
 
 ## Breaking Changes
 
-Use `!` immediately after the type to signal a breaking change in the subject line:
+Use `!` immediately after the type to signal a breaking change in the subject line. Only valid for `new`, `update`, `remove`, and `security` types:
 
 ```
 📦 new!: completely redesign authentication system
 🔧 update!: drop support for node 14
 🗑️ remove!: remove deprecated v1 api endpoints
+🔒 security!: enforce tls 1.2 minimum across all connections
 🔧 update! (api): change response format for all endpoints
 ```
 

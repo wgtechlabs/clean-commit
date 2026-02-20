@@ -34,7 +34,7 @@ Reference: https://github.com/wgtechlabs/clean-commit
 ## Rules
 
 - Use lowercase for type
-- Use `!` immediately after type (no space) to signal a breaking change
+- Use `!` immediately after type (no space) to signal a breaking change — only for `new`, `update`, `remove`, `security`
 - Use present tense ("add" not "added")
 - No period at the end
 - Keep description under 72 characters
