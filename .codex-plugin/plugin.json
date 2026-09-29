@@ -1,0 +1,32 @@
+{
+  "name": "clean-commit",
+  "version": "0.1.0",
+  "description": "Draft, validate, and create commit messages from the actual Git changes.",
+  "author": {
+    "name": "WG Technology Labs",
+    "url": "https://github.com/wgtechlabs"
+  },
+  "homepage": "https://github.com/wgtechlabs/clean-commit",
+  "repository": "https://github.com/wgtechlabs/clean-commit",
+  "license": "MIT",
+  "keywords": [
+    "commits",
+    "workflow",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Clean Commit",
+    "shortDescription": "Write and validate Clean Commit messages",
+    "longDescription": "Draft, validate, and create commit messages from the actual Git changes.",
+    "developerName": "WG Technology Labs",
+    "category": "Productivity",
+    "capabilities": [
+      "Instructions"
+    ],
+    "websiteURL": "https://github.com/wgtechlabs/clean-commit",
+    "defaultPrompt": [
+      "Use $clean-commit to draft a message for my staged changes without committing."
+    ]
+  }
+}

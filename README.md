@@ -13,6 +13,74 @@ A minimalist git commit workflow designed to be simple, memorable, and universal
 
 ---
 
+## Install the agent skill
+
+Use **Clean Commit** on its own, like the standalone
+[Clean Coding](https://github.com/wgtechlabs/clean-coding) and
+[Clean Code Review](https://github.com/wgtechlabs/clean-code-review) plugins:
+
+```sh
+codex plugin marketplace add wgtechlabs/clean-commit
+codex plugin add clean-commit@clean-commit
+```
+
+Start a new chat and invoke `$clean-commit`, for example:
+
+```text
+$clean-commit draft a message for my staged changes without committing
+```
+
+For another Agent Skills-compatible host, load the entire
+[`skills/clean-commit/`](skills/clean-commit/SKILL.md) folder using that host's skill
+installation mechanism. All essential instructions are included; no other
+Clean skill is required. The host still needs the tools and access used by the
+requested operation. Installation does not authorize repository changes.
+
+[Clean Workflow](https://github.com/wgtechlabs/clean-workflow) is the broader
+bundle for development, review, and Git/delivery guidance. Use this standalone
+plugin when you only want Clean Commit. The new skill is maintained here;
+adding its released versions to that bundle is separate downstream work.
+
+### Updates and development installation
+
+To refresh a Git marketplace and reinstall its plugin:
+
+```sh
+codex plugin marketplace upgrade clean-commit
+codex plugin remove clean-commit@clean-commit
+codex plugin add clean-commit@clean-commit
+```
+
+Start a new chat after updating. The plugin version in
+`.codex-plugin/plugin.json` versions the installable package separately from
+the convention's specification version. Maintainers should bump the package
+version when releasing skill changes; this addition does not publish a release
+or add automated release infrastructure.
+
+Before a change reaches the default branch, test its feature branch with:
+
+```sh
+codex plugin marketplace add wgtechlabs/clean-commit --ref BRANCH_OR_TAG
+codex plugin add clean-commit@clean-commit
+```
+
+For local development, replace the marketplace source with the absolute path
+to this checkout. Replace `BRANCH_OR_TAG` with the ref to test. Remove an existing
+same-named marketplace before switching sources. See
+[skill verification](tests/skill-scenarios.md) for installation checks and
+representative behavior scenarios.
+
+### Skill ownership
+
+This repository is the canonical source for `clean-commit`. Maintain its skill
+alongside [SPECIFICATION.md](SPECIFICATION.md), which remains authoritative.
+Keep instructions self-contained and check examples against the specification.
+Downstream bundles should import a released skill directory and record its
+version and source commit, rather than maintain independent edits. A bundle
+can lag until its update is reviewed and merged.
+
+---
+
 ## Why Clean Commit?
 
 Existing commit workflows are **too complex**. They require memorizing lengthy type names, complex scoping rules, and rigid formats that slow you down.
