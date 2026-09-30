@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Plan release
+        id: plan
+        uses: wgtechlabs/release-build-flow-action@6df9cb42c24c296d902150d051a0b6be4422cccc # v1
+        with:
+          initial-version: 0.1.0
+          dry-run: true
+          changelog-enabled: false
+          sync-version-files: false
+
+      - name: Update plugin version
+        if: steps.plan.outputs.version-bump-type != 'none'
+        env:
+          RELEASE_VERSION: ${{ steps.plan.outputs.version }}
+        run: |
+          jq --arg version "$RELEASE_VERSION" '.version = $version' .codex-plugin/plugin.json > "$RUNNER_TEMP/plugin.json"
+          mv "$RUNNER_TEMP/plugin.json" .codex-plugin/plugin.json
+          git add .codex-plugin/plugin.json
+
+      - name: Publish release
+        if: steps.plan.outputs.version-bump-type != 'none'
+        uses: wgtechlabs/release-build-flow-action@6df9cb42c24c296d902150d051a0b6be4422cccc # v1
+        with:
+          planned-version: ${{ steps.plan.outputs.version }}
+          planned-version-tag: ${{ steps.plan.outputs.version-tag }}
+          planned-version-bump-type: ${{ steps.plan.outputs.version-bump-type }}
+          planned-previous-version: ${{ steps.plan.outputs.previous-version }}
+          sync-version-files: false
+          changelog-path: ./CHANGELOG.md
+          commit-changelog: true
+          create-release: true
