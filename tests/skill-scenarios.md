@@ -54,3 +54,29 @@ PY
 ```
 
 Package discovery and static inspection do not prove these behavioral checks.
+
+## Recorded installation check (2026-09-30)
+
+Passed with Codex CLI `0.158.0-alpha.2.1` and this PR's local checkout:
+
+1. Created an empty temporary Codex data directory and an empty workspace
+   outside the checkout. Configured only the test child processes to use that
+   data directory; no user configuration, plugins, or credentials were copied.
+2. Added this checkout as a local marketplace and installed `clean-commit@clean-commit`.
+   `codex plugin list --marketplace clean-commit --json` reported version
+   `0.1.0` installed and enabled.
+3. Started a new `codex app-server --stdio`, initialized its protocol, and
+   called `skills/list` with the empty workspace and `forceReload: true`.
+   `clean-commit:clean-commit` was enabled, loaded from the temporary plugin
+   cache, and its file bytes matched `skills/clean-commit/SKILL.md` exactly.
+4. Checked the complete discovery result: this was the only Clean skill;
+   Clean Workflow was absent from both discovery and the temporary data
+   directory. Created a fresh ephemeral session with `thread/start` successfully.
+5. Removed the test plugin and marketplace and discarded the temporary data
+   directory. The user's installed plugins and configuration were unchanged.
+
+This verifies standalone installation and fresh-session discovery without
+Clean Workflow. The operating-system user home was not isolated: unrelated
+TRM Agent Skills and Codex built-in skills remained discoverable. No model
+turn, other vendor's host, or live GitHub mutation was exercised by this check.
+The behavior scenarios above remain separate checks.
