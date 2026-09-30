@@ -1,0 +1,20 @@
+{
+  "name": "clean-commit",
+  "interface": {
+    "displayName": "Clean Commit"
+  },
+  "plugins": [
+    {
+      "name": "clean-commit",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
