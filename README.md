@@ -15,35 +15,58 @@ A minimalist git commit workflow designed to be simple, memorable, and universal
 
 ## Install the agent skill
 
-Use **Clean Commit** on its own, like the standalone
-[Clean Coding](https://github.com/wgtechlabs/clean-coding) and
-[Clean Code Review](https://github.com/wgtechlabs/clean-code-review) plugins:
+Install **Clean Commit** as a standalone skill for AI assistants. It includes its
+own instructions and works without Clean Workflow or another Clean skill.
+You can also use the convention manually with the guides below.
+
+### Requirements
+
+Use a Codex version with `codex plugin` support; installation and discovery
+were verified with Codex CLI `0.158.0-alpha.2.1`.
+Git and a local repository are required to inspect changes or create commits. Message-only validation does not need GitHub access.
+
+### Install in Codex
+
+Install the stable version from `main`:
 
 ```sh
-codex plugin marketplace add wgtechlabs/clean-commit
+codex plugin marketplace add wgtechlabs/clean-commit --ref main
 codex plugin add clean-commit@clean-commit
+codex plugin list --marketplace clean-commit --json
 ```
 
-Start a new chat and invoke `$clean-commit`, for example:
+Confirm the plugin is installed and enabled, then start a new chat and invoke
+`$clean-commit`. Installation alone does not authorize repository changes.
+
+### Example requests
 
 ```text
 $clean-commit draft a message for my staged changes without committing
+
+$clean-commit validate this message: 🔧 update (api): fix pagination
+
+$clean-commit check whether my staged changes should be split into separate commits
 ```
 
-For another Agent Skills-compatible host, load the entire
-[`skills/clean-commit/`](skills/clean-commit/SKILL.md) folder using that host's skill
-installation mechanism. All essential instructions are included; no other
-Clean skill is required. The host still needs the tools and access used by the
-requested operation. Installation does not authorize repository changes.
+Drafts describe the staged diff. Drafting and validation do not stage files,
+create commits, amend history, or push. The target repository's explicit
+commit convention takes precedence.
 
-[Clean Workflow](https://github.com/wgtechlabs/clean-workflow) is the broader
-bundle for development, review, and Git/delivery guidance. Use this standalone
-plugin when you only want Clean Commit. The new skill is maintained here;
-adding its released versions to that bundle is separate downstream work.
+### Other Agent Skills hosts
 
-### Updates and development installation
+Load the entire [`skills/clean-commit/`](skills/clean-commit/SKILL.md) folder using
+your host's skill installation mechanism. The instructions are self-contained;
+the host must still provide the tools required for the requested operation.
+Other vendors' hosts have not been verified in this repository's test record.
 
-To refresh a Git marketplace and reinstall its plugin:
+[Clean Workflow](https://github.com/wgtechlabs/clean-workflow) provides broader
+development, review, and delivery guidance. Choose this standalone plugin for
+Clean Commit alone. This repository owns the skill; updates to the broader bundle
+are maintained separately.
+
+### Update or remove
+
+Refresh the configured marketplace and reinstall its plugin:
 
 ```sh
 codex plugin marketplace upgrade clean-commit
@@ -51,24 +74,32 @@ codex plugin remove clean-commit@clean-commit
 codex plugin add clean-commit@clean-commit
 ```
 
-Start a new chat after updating. The plugin version in
-`.codex-plugin/plugin.json` versions the installable package separately from
-the convention's specification version. Maintainers should bump the package
-version when releasing skill changes; this addition does not publish a release
-or add automated release infrastructure.
-
-Before a change reaches the default branch, test its feature branch with:
+Start a new chat after updating. To uninstall and remove its marketplace:
 
 ```sh
-codex plugin marketplace add wgtechlabs/clean-commit --ref BRANCH_OR_TAG
+codex plugin remove clean-commit@clean-commit
+codex plugin marketplace remove clean-commit
+```
+
+### Preview development changes
+
+To test `dev` before promotion to `main`, first remove an existing installation
+and same-named marketplace with the commands above, then run:
+
+```sh
+codex plugin marketplace add wgtechlabs/clean-commit --ref dev
 codex plugin add clean-commit@clean-commit
 ```
 
-For local development, replace the marketplace source with the absolute path
-to this checkout. Replace `BRANCH_OR_TAG` with the ref to test. Remove an existing
-same-named marketplace before switching sources. See
-[skill verification](tests/skill-scenarios.md) for installation checks and
-representative behavior scenarios.
+Use another branch or an existing tag instead of `dev` to test a specific ref.
+For local development, use the absolute checkout path as the marketplace source
+and omit `--ref`. Switch back to the stable installation commands after testing.
+See [skill verification](tests/skill-scenarios.md) for recorded installation
+results, behavior scenarios, and verification limits.
+
+The installable package is version `0.1.0`, tracked in
+[`.codex-plugin/plugin.json`](.codex-plugin/plugin.json). The version badge at
+the top of this README refers to the convention specification, not the plugin.
 
 ### Skill ownership
 
@@ -146,10 +177,10 @@ Clean Commit is different:
 
 ### Rules
 - Use lowercase for type
-- Use `!` immediately after type (no space) to signal a breaking change
+- Use `!` immediately after type (no space) for breaking changes on `new`, `update`, `remove`, or `security`
 - Use present tense ("add" not "added")
 - No period at the end
-- Keep description under 72 characters
+- Keep the complete subject at most 72 characters, including emoji, type, scope, and description
 
 ---
 
