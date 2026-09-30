@@ -97,9 +97,20 @@ and omit `--ref`. Switch back to the stable installation commands after testing.
 See [skill verification](tests/skill-scenarios.md) for recorded installation
 results, behavior scenarios, and verification limits.
 
-The installable package is version `0.1.0`, tracked in
+The current installable package version is tracked in
 [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json). The version badge at
 the top of this README refers to the convention specification, not the plugin.
+
+### Automated releases
+
+Pushes to `main`, including a merged promotion PR, run the
+[release workflow](.github/workflows/release.yml). It uses the same pinned
+[Release Build Flow Action](https://github.com/wgtechlabs/release-build-flow-action)
+configuration as Clean Coding and Clean Code Review: plan the version, update
+the plugin manifest, then commit `CHANGELOG.md` and publish a tag and GitHub
+Release when a version bump is needed. Existing release tags determine the
+next version; `0.1.0` is the initial version when no tags exist. Other package
+manifests are not synchronized by this workflow.
 
 ### Skill ownership
 
